@@ -1,4 +1,4 @@
-from Flask import Flask, request, session, redirect, url_for, render_template, flash
+from flask import Flask, request, session, redirect, url_for, render_template, flash
 import boto3
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
@@ -237,5 +237,5 @@ def contact():
     return render_template("contact.html")
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0',port=5000,debug=True)
