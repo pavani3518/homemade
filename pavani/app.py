@@ -63,7 +63,6 @@ snack_list = [
         {"id": 10, "name": "Boondi", "price": 65, "image":'images/boondi.jpg'},
         {"id": 11, "name": "Chakodi", "price": 55, "image": 'images/chekodi.jpg'},
     ]
-
 def is_logged_in():
     return 'email' in session
 
@@ -119,7 +118,6 @@ def require_role(required_role):
         return wrapper
     return decorator
 @app.route('/snacks')
-@app.route('/snacks')
 def snacks():
     snack_list = [
         {"id": 6, "name": "Murukku", "price": 60, "image": url_for('static', filename='images/murukulu.jpg')},
@@ -130,10 +128,6 @@ def snacks():
         {"id": 11, "name": "Chakodi", "price": 55, "image": url_for('static', filename='images/chekodi.jpg')},
     ]
     return render_template("snacks.html", snacks=snack_list)
-
-
-
-
 @app.route('/')
 def home():
     return render_template("home.html", products=products)
@@ -243,5 +237,5 @@ def contact():
     return render_template("contact.html")
 
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=5000,debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
